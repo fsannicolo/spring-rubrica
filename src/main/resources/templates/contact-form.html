@@ -16,7 +16,7 @@
 
                 <!-- controlli del validator -->
                 <div th:if="${#fields.hasErrors('name')}">
-                    <span th:error="*{name}" class="text-danger"></span>
+                    <span th:errors="*{name}" class="text-danger"></span>
                 </div>
             </div>
 
@@ -25,7 +25,7 @@
                 <input th:field="*{surname}" type="text"/>
 
                 <div th:if="${#fields.hasErrors('surname')}">
-                    <span th:error="*{surname}" class="text-danger"></span>
+                    <span th:errors="*{surname}" class="text-danger"></span>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                 <input th:field="*{phone}" type="tel" pattern="[0-9]{10}"/> 
 
                 <div th:if="${#fields.hasErrors('phone')}">
-                    <span th:error="*{phone}" class="text-danger"></span>
+                    <span th:errors="*{phone}" class="text-danger"></span>
                 </div>
             </div>
 
@@ -43,7 +43,7 @@
                 <input th:field="*{email}" type="email" placeholder="name@example.com"/> 
 
                 <div th:if="${#fields.hasErrors('email')}">
-                    <span th:error="*{email}" class="text-danger"></span>
+                    <span th:errors="*{email}" class="text-danger"></span>
                 </div>
             </div>
 
