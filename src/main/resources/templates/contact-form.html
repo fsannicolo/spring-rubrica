@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,21 +13,38 @@
             <div>
                 <label>Nome</label>
                 <input th:field="*{name}" type="text"/>
+
+                <!-- controlli del validator -->
+                <div th:if="${#fields.hasErrors('name')}">
+                    <span th:error="*{name}" class="text-danger"></span>
+                </div>
             </div>
 
             <div>
                 <label>Cognome</label>
                 <input th:field="*{surname}" type="text"/>
+
+                <div th:if="${#fields.hasErrors('surname')}">
+                    <span th:error="*{surname}" class="text-danger"></span>
+                </div>
             </div>
 
             <div>
                 <label>Telefono</label>
-                <input th:field="*{phone}" type="text"/>
+                <input th:field="*{phone}" type="tel" pattern="[0-9]{10}"/> 
+
+                <div th:if="${#fields.hasErrors('phone')}">
+                    <span th:error="*{phone}" class="text-danger"></span>
+                </div>
             </div>
 
             <div>
                 <label>Email</label>
-                <input th:field="*{email}" type="text"/>
+                <input th:field="*{email}" type="email" placeholder="name@example.com"/> 
+
+                <div th:if="${#fields.hasErrors('email')}">
+                    <span th:error="*{email}" class="text-danger"></span>
+                </div>
             </div>
 
             <div>
