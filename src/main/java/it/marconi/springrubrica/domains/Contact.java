@@ -14,12 +14,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "contacts")
+@Entity     // specifico che la classe è entità del database
+@Table(name = "contacts")   // associo la classe a una tabella del db
 public class Contact {
     
-    @Id
-    @GeneratedValue
+    @Id     // primary key
+    @GeneratedValue //generata in automatico
     @Column(name = "id")
     private UUID id;
 

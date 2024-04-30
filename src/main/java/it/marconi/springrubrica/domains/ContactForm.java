@@ -22,7 +22,7 @@ public class ContactForm {
     private String surname;
 
     @NotEmpty
-    @Pattern(regexp = "([0-9]{10})")
+    @Pattern(regexp = "([0-9]{10})") // regular expression per un numero da 10 cifre
     private String phone;
 
     //@Pattern(regexp="^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")

@@ -1,5 +1,6 @@
 package it.marconi.springrubrica.services;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -33,8 +34,18 @@ public class ContactService {
         return c;
     }
 
-    
+    // un Optional è un contenitore che controlla l'effettiva presenza di un valore non null
     public Optional<Contact> get(UUID id) {
         return contactRepo.findById(id);
+    }
+
+    // recupera tutti i contatti dal database
+    public List<Contact> findAll() {
+        return contactRepo.findAll();
+    }
+
+    // elimina un contatto noto il suo id
+    public void deleteById(UUID id) {
+        contactRepo.deleteById(id); 
     }
 }
